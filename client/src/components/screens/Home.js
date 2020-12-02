@@ -34,7 +34,7 @@ const Home = () => {
         .then(result=>{
             // console.log(result)
             const newdata=data.map(item=>{
-                if(item._id==result._id){
+                if(item._id===result._id){
                     return result
                 }
                 else{
@@ -61,7 +61,7 @@ const Home = () => {
         .then(result=>{
             // console.log(result)
             const newdata=data.map(item=>{
-                if(item._id==result._id){
+                if(item._id===result._id){
                     return result
                 }
                 else{
@@ -89,7 +89,7 @@ const Home = () => {
         .then(result=>{
             console.log(result)
             const newData = data.map(item=>{
-              if(item._id==result._id){
+              if(item._id===result._id){
                   return result
               }else{
                   return item
@@ -111,7 +111,7 @@ const Home = () => {
       .then(result=>{
           console.log(result)
           const newData=data.filter( item =>{
-              return (item._id !=result._id)
+              return (item._id !==result._id)
           })
           setData(newData)
       })
@@ -123,7 +123,7 @@ const Home = () => {
                 <div className="card home-card" key={item.postedBy._id}>
                     <h5><Link to={item.postedBy._id===state._id?'/profile':'/profile/'+item.postedBy._id}>{item.postedBy.name}</Link>{item.postedBy._id===state._id&&<i style={{float:"right"}} class="material-icons" onClick={e=>deletePost(item._id)}>delete</i>}</h5>
                     <div className="card-image">
-                        <img src={item.photo} />
+                        <img src={item.photo} alt="item"/>
                     </div>
                     <div className="card-content">
                         <i className="material-icons" style={{ color: "red" }}>

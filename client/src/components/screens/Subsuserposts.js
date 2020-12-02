@@ -34,7 +34,7 @@ const Home = () => {
         .then(result=>{
             // console.log(result)
             const newdata=data.map(item=>{
-                if(item._id==result._id){
+                if(item._id===result._id){
                     return result
                 }
                 else{
@@ -61,7 +61,7 @@ const Home = () => {
         .then(result=>{
             // console.log(result)
             const newdata=data.map(item=>{
-                if(item._id==result._id){
+                if(item._id===result._id){
                     return result
                 }
                 else{
@@ -89,7 +89,7 @@ const Home = () => {
         .then(result=>{
             console.log(result)
             const newData = data.map(item=>{
-              if(item._id==result._id){
+              if(item._id===result._id){
                   return result
               }else{
                   return item
@@ -111,7 +111,7 @@ const Home = () => {
       .then(result=>{
           console.log(result)
           const newData=data.filter( item =>{
-              return (item._id !=result._id)
+              return (item._id !==result._id)
           })
           setData(newData)
       })
