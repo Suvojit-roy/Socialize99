@@ -5,7 +5,7 @@ const app=express();
 const PORT=process.env.PORT || 5000;
 const {MONGOURI}=require('./config/keys.js')
 
-// app.use(cors());
+
 
 mongoose.connect(MONGOURI,{ useUnifiedTopology: true ,useNewUrlParser: true})
 mongoose.connection.on('connected',()=>{
@@ -31,9 +31,9 @@ app.use(require('./Routes/user'))
 //     res.send("Hello Hi");
 // })
 
-if(process.env.NODE_ENV=="production"){
+if(process.env.NODE_ENV==='production'){
     app.use(express.static('client/build'))
-    const path=require('pathheroku login -I')
+    const path=require('path')
     app.get("*",(req,res)=>{
         res.sendFile(path.resolve(__dirname,'client','build','index.html'))
     })
