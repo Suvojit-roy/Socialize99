@@ -6,6 +6,7 @@ a{
 
 .brand-logo,h2{
   font-family: 'Grand Hotel', cursive;
+  
 }
 
 .mycard{
@@ -21,7 +22,7 @@ a{
 .gallery{
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
+  justify-content: space-between;
 
 }
 

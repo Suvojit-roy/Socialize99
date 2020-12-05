@@ -121,9 +121,9 @@ const Home = () => {
         return (
             <div className="home">
                 <div className="card home-card" key={item.postedBy._id}>
-                    <h5><Link to={item.postedBy._id===state._id?'/profile':'/profile/'+item.postedBy._id}>{item.postedBy.name}</Link>{item.postedBy._id===state._id&&<i style={{float:"right"}} class="material-icons" onClick={e=>deletePost(item._id)}>delete</i>}</h5>
+                    <h5><Link to={item.postedBy._id===state._id?'/profile':'/profile/'+item.postedBy._id}>{item.postedBy.name}</Link>{item.postedBy._id===state._id&&<i style={{float:"right"}} className="material-icons" onClick={e=>deletePost(item._id)}>delete</i>}</h5>
                     <div className="card-image">
-                        <img src={item.photo} alt="item"/>
+                        <img src={item.photo} alt="picture"/>
                     </div>
                     <div className="card-content">
                         <i className="material-icons" style={{ color: "red" }}>
@@ -131,9 +131,9 @@ const Home = () => {
                         </i>
                         {item.likes.includes(state._id)
                         ?
-                        <i class="material-icons" onClick={e=>unlikePost(item._id)}>thumb_down</i>
+                        <i className="material-icons" onClick={e=>unlikePost(item._id)}>thumb_down</i>
                         :
-                        <i class="material-icons" onClick={e=>likePost(item._id)}>thumb_up</i>}
+                        <i className="material-icons" onClick={e=>likePost(item._id)}>thumb_up</i>}
                         
                         
                         <h6>{item.likes.length} likes</h6>

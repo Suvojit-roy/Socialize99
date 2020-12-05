@@ -1,5 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react'
 import {UserContext} from '../../App'
+import {Link, useHistory} from 'react-router-dom'
 
 const Profile=()=>{
 
@@ -97,12 +98,17 @@ const Profile=()=>{
                        <h6>{state?state.followers.length:"0"} followers</h6>
                        <h6>{state?state.following.length:"0"} following</h6>
                    </div>
+                   <button className="btn waves-effect waves-light"  style={{margin:"19px"}}>
+                    <Link style={{color:"white"}} to="/create"><span style={{color:"white"}}>Add Post</span></Link>
+                    </button> 
+                    
+                    
 
                </div>
             </div>
             <div className="gallery">
             {mypics.map(item=>{
-                return <img key={item._id} className="item card" src={item.photo} alt={item.title}/>
+                return <img key={item._id} className="item card" src={item.photo} alt={item.title} style={{maxWidth:"33rem",maxHeight:"33rem",justifyContent:"space-between"}}/>
             })}
                 
             </div>

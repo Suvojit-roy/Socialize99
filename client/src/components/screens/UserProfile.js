@@ -68,7 +68,7 @@ const UserProfile=()=>{
              localStorage.setItem("user",JSON.stringify(data))
              setProfile((prevState)=>{
                  const newfollower=prevState.user.followers.filter(item=>{
-                     return (item!==data._id)
+                     return (item!=data._id)
                  })
                  return{
                      ...prevState,
@@ -104,11 +104,11 @@ const UserProfile=()=>{
                     </div>
                     {
                         showfollow?
-                        <button onClick={()=>followUser()} className="btn waves-effect waves-light #42a5f5 blue darken-1">
+                        <button style={{margin:"1rem"}} onClick={()=>followUser()} className="btn waves-effect waves-light #42a5f5 blue darken-1">
                         Follow
                         </button>
                         : 
-                        <button onClick={()=>unfollowUser()} className="btn waves-effect waves-light #42a5f5 blue darken-1">
+                        <button style={{margin:"1rem"}} onClick={()=>unfollowUser()} className="btn waves-effect waves-light #42a5f5 blue darken-1">
                         Unfollow
                         </button> 
                     }
@@ -118,7 +118,7 @@ const UserProfile=()=>{
             </div>
             <div className="gallery">
             {userProfile.posts.map(item=>{
-                return <img key={item._id} className="item card" src={item.photo} alt={item.title}/>
+                return <img key={item._id} className="item card" src={item.photo} alt={item.title} style={{maxWidth:"33rem",maxHeight:"33rem",justifyContent:"space-between"}}/>
             })}
                 
             </div>
